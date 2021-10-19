@@ -22,9 +22,9 @@ public class Paciente extends Pessoa{
 	@Override
 	public void HistoricoSistema() {
 		System.out.println("Ficha Paciente");
-		System.out.printf("Nome Paciente: %s", getNome());
-		System.out.printf("Data de Nascimento %s", getDataNacimento());
-		System.out.printf("Cadastro Unico %s", cadastroUnico);
+		System.out.printf("Nome Paciente: %s\n", getNome());
+		System.out.printf("Data de Nascimento: %s\n", getDataNacimento());
+		System.out.printf("Cadastro Unico: %s\n", cadastroUnico);
 		
 	}
 

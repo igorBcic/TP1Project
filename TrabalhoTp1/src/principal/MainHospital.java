@@ -26,34 +26,59 @@ public class MainHospital {
 			System.out.print("\n");
 			opcao = sc.nextInt();
 			String nome, email, data, CadUnico;
+			int cep, cpf, telefone;
+			nome = "Maria Rafaela";
+			recepcao.setNome(nome);
+			email = "Maria_R@gmail.com";
+			recepcao.setEmail(email);
 			sc.nextLine();
 			
 			switch (opcao) {
 			case 1:
-				System.out.println("Cadastro Recepcionista");
-				System.out.println("Cadastre seu nome completo:");
-				nome = sc.nextLine();
-				recepcao.setNome(nome);
-				System.out.println("Cadastre seu email:");
-				email = sc.nextLine();
-				recepcao.setEmail(email);
-				System.out.println("Cadastre sua data de nascimento:");
-				data = sc.nextLine();
-				recepcao.setDataNacimento(data);
+				System.out.println("Area do Recepcionista");
+				System.out.println("\n                ===============================");
+				System.out.println("                  |     1 - Cadastrar Paciente         |");
+				System.out.println("                  |     2 - Historico de Atividades           |");
+				System.out.println("                  |     0 - Sair                |");
+				System.out.println("                  ==============================\n");
+				opcao = sc.nextInt();
+				sc.nextLine();
 				
-				System.out.println("Digite o nome do Paciente");
-				nome = sc.nextLine();
-				paciente.setNome(nome);
-				System.out.println("Digite o nome o Cadastro Unico");
-				CadUnico = sc.nextLine();
-				paciente.setCadastroUnico(CadUnico);
-				System.out.println("Digite a Data: ");
-				data = sc.nextLine();
-				paciente.setDataNacimento(data);
-				recepcao.CadastroPaciente(paciente);
-				recepcao.HistoricoSistema();
-		 
 				
+				switch (opcao) {
+				case 1:
+					System.out.println("Digite o nome do Paciente");
+					nome = sc.nextLine();
+					paciente.setNome(nome);
+					System.out.println("Digite o Cadastro Unico");
+					CadUnico = sc.nextLine();
+					paciente.setCadastroUnico(CadUnico);
+					System.out.println("Digite a Data de nascimento: ");
+					data = sc.nextLine();
+					paciente.setDataNacimento(data);
+					System.out.println("Digite o CEP: ");
+					cep = sc.nextInt();
+					paciente.setCep(cep);
+					System.out.println("Digite o CPF: ");
+					cpf = sc.nextInt();
+					paciente.setCpf(cpf);
+					System.out.println("Digite o Telefone: ");
+					telefone = sc.nextInt();
+					paciente.setTelefone(telefone);
+;					
+					
+					System.out.println("Digite a Data de Hoje: ");
+					data = sc.nextLine();
+					recepcao.setDataNacimento(data);
+				
+					recepcao.CadastroPaciente(paciente);
+					break;
+					
+				case 2:
+					recepcao.HistoricoSistema();
+					break;
+				}
+			
 				break;
 			case 2:
 				System.out.println("Paciente: Acesse seu Historico");

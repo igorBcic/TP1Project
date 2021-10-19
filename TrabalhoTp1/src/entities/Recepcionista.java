@@ -33,14 +33,17 @@ public class Recepcionista extends Pessoa{
 	
 	@Override
 	public void HistoricoSistema() {
-		System.out.println("Registros do Recepcionista");
+		System.out.printf("Registros do Recepcionista %s\n", getNome());
+		System.out.printf("Data de Regostrp %s\n", getDataNacimento());
+		System.out.println("============================================");
 		System.out.println("Pacientes Cadastrados");
 		System.out.printf("Nome do Paciente: %s\n",listaPaciente .get(0).getNome());
 		System.out.printf("Data do Paciente: %s\n",listaPaciente .get(0).getDataNacimento());
 		System.out.printf("Cadastro Unico do Paciente: %s\n",listaPaciente .get(0).getCadastroUnico());
-		
-		
-		
+		System.out.printf("CPF: %d\n",listaPaciente .get(0).getCpf());
+		System.out.printf("CEP: %d\n",listaPaciente .get(0).getCep());
+		System.out.printf("Numero de Telefone: %d\n",listaPaciente .get(0).getTelefone());
+				
 	}
 	
 
