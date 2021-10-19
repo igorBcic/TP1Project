@@ -2,6 +2,7 @@ package principal;
 
 import java.util.Scanner;
 
+import entities.Paciente;
 import entities.Recepcionista;
 
 public class MainHospital {
@@ -10,6 +11,7 @@ public class MainHospital {
 		// TODO Auto-generated method stub
 		
 		Recepcionista recepcao = new Recepcionista();
+		Paciente paciente = new Paciente();
 		int opcao = 0;
 		Scanner sc = new Scanner(System.in);
 		do {
@@ -23,7 +25,9 @@ public class MainHospital {
 			
 			System.out.print("\n");
 			opcao = sc.nextInt();
-			String nome, email, data;
+			String nome, email, data, CadUnico;
+			sc.nextLine();
+			
 			switch (opcao) {
 			case 1:
 				System.out.println("Cadastro Recepcionista");
@@ -36,11 +40,24 @@ public class MainHospital {
 				System.out.println("Cadastre sua data de nascimento:");
 				data = sc.nextLine();
 				recepcao.setDataNacimento(data);
-				recepcao.criarPaciente();
+				
+				System.out.println("Digite o nome do Paciente");
+				nome = sc.nextLine();
+				paciente.setNome(nome);
+				System.out.println("Digite o nome o Cadastro Unico");
+				CadUnico = sc.nextLine();
+				paciente.setCadastroUnico(CadUnico);
+				System.out.println("Digite a Data: ");
+				data = sc.nextLine();
+				paciente.setDataNacimento(data);
+				recepcao.CadastroPaciente(paciente);
+				recepcao.HistoricoSistema();
+		 
 				
 				break;
 			case 2:
-				System.out.println("Paciente");
+				System.out.println("Paciente: Acesse seu Historico");
+				paciente.HistoricoSistema();
 				break;
 			case 0:
 				break;

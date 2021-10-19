@@ -1,12 +1,15 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Recepcionista extends Pessoa{
 	private boolean laboratorio, triagem;
 	ArrayList<Paciente> listaPaciente = new ArrayList<Paciente>();
 	Triagem triagemPaciente = new Triagem();
-	Paciente paciente = new Paciente();
+
+	String nome,data,CadUnico;
+	Scanner sc = new Scanner(System.in);
 
 	public boolean isLaboratorio() {
 		return laboratorio;
@@ -24,7 +27,19 @@ public class Recepcionista extends Pessoa{
 		this.triagem = triagem;
 	}
 	
-	public void criarPaciente() {
+	public void CadastroPaciente(Paciente paciente) {	
+		listaPaciente.add(paciente);
+	}
+	
+	@Override
+	public void HistoricoSistema() {
+		System.out.println("Registros do Recepcionista");
+		System.out.println("Pacientes Cadastrados");
+		System.out.printf("Nome do Paciente: %s\n",listaPaciente .get(0).getNome());
+		System.out.printf("Data do Paciente: %s\n",listaPaciente .get(0).getDataNacimento());
+		System.out.printf("Cadastro Unico do Paciente: %s\n",listaPaciente .get(0).getCadastroUnico());
+		
+		
 		
 	}
 	
