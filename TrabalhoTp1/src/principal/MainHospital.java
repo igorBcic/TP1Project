@@ -28,7 +28,7 @@ public class MainHospital {
 			System.out.print("\n");
 			opcao = sc.nextInt();
 			String nome, email, data, CadUnico,sintomas;
-			int cep, cpf, telefone;
+			String cep, cpf, telefone;
 			nome = "Maria Rafaela";
 			recepcao.setNome(nome);
 			email = "Maria_R@gmail.com";
@@ -59,13 +59,13 @@ public class MainHospital {
 					data = sc.nextLine();
 					paciente.setDataNacimento(data);
 					System.out.println("Digite o CEP: ");
-					cep = sc.nextInt();
+					cep = sc.nextLine();
 					paciente.setCep(cep);
 					System.out.println("Digite o CPF: ");
-					cpf = sc.nextInt();
+					cpf = sc.nextLine();
 					paciente.setCpf(cpf);
 					System.out.println("Digite o Telefone: ");
-					telefone = sc.nextInt();
+					telefone = sc.nextLine();
 					paciente.setTelefone(telefone);
 					System.out.println("Temperatura do Paciente: ");
 					paciente.temperatura = sc.nextFloat();
@@ -87,11 +87,6 @@ public class MainHospital {
 						
 					}while(add != 0);
 					sintomas = sc.nextLine();
-					
-					
-						
-;					
-					
 					System.out.println("Digite a Data de Hoje: ");
 					data = sc.nextLine();
 					recepcao.setDataNacimento(data);

@@ -3,30 +3,30 @@ package entities;
 public class Pessoa {
 	
 	private String nome, dataNacimento, email;
-	private int cpf, cep, telefone;
+	private String cpf, cep, telefone;
 	
 	public String getDataNacimento() {
 		return dataNacimento;
 	}
-	public void setDataNacimento(String dataNacimento) {
-		this.dataNacimento = dataNacimento;
+	public String setDataNacimento(String dataDacimento) {
+		return dataNacimento;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 	
