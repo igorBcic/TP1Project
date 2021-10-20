@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Recepcionista extends Pessoa{
-	private boolean laboratorio, triagem;
+	private boolean laboratorio;
 	ArrayList<Paciente> listaPaciente = new ArrayList<Paciente>();
-	Triagem triagemPaciente = new Triagem();
+	
 
 	String nome,data,CadUnico;
 	Scanner sc = new Scanner(System.in);
@@ -19,13 +19,7 @@ public class Recepcionista extends Pessoa{
 		this.laboratorio = laboratorio;
 	}
 
-	public boolean isTriagem() {
-		return triagem;
-	}
-
-	public void setTriagem(boolean triagem) {
-		this.triagem = triagem;
-	}
+	
 	
 	public void CadastroPaciente(Paciente paciente) {	
 		listaPaciente.add(paciente);

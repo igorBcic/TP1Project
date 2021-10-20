@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import entities.Paciente;
 import entities.Recepcionista;
+import entities.Triagem;
 
 public class MainHospital {
 
@@ -11,6 +12,7 @@ public class MainHospital {
 		// TODO Auto-generated method stub
 		
 		Recepcionista recepcao = new Recepcionista();
+		Triagem triagemPaciente = new Triagem();
 		Paciente paciente = new Paciente();
 		int opcao = 0;
 		Scanner sc = new Scanner(System.in);
@@ -25,7 +27,7 @@ public class MainHospital {
 			
 			System.out.print("\n");
 			opcao = sc.nextInt();
-			String nome, email, data, CadUnico;
+			String nome, email, data, CadUnico,sintomas;
 			int cep, cpf, telefone;
 			nome = "Maria Rafaela";
 			recepcao.setNome(nome);
@@ -36,11 +38,11 @@ public class MainHospital {
 			switch (opcao) {
 			case 1:
 				System.out.println("Area do Recepcionista");
-				System.out.println("\n                ===============================");
+				System.out.println("\n                ======================================");
 				System.out.println("                  |     1 - Cadastrar Paciente         |");
-				System.out.println("                  |     2 - Historico de Atividades           |");
-				System.out.println("                  |     0 - Sair                |");
-				System.out.println("                  ==============================\n");
+				System.out.println("                  |     2 - Historico de Atividades    |");
+				System.out.println("                  |     0 - Sair                       |");
+				System.out.println("                  =====================================\n");
 				opcao = sc.nextInt();
 				sc.nextLine();
 				
@@ -65,6 +67,29 @@ public class MainHospital {
 					System.out.println("Digite o Telefone: ");
 					telefone = sc.nextInt();
 					paciente.setTelefone(telefone);
+					System.out.println("Temperatura do Paciente: ");
+					paciente.temperatura = sc.nextFloat();
+					System.out.println("Pressão Arterial: ");
+					paciente.pressao = sc.nextFloat();
+					System.out.println("Saturação de Oxigenio: ");
+					paciente.saturacao = sc.nextFloat();
+					System.out.println("Sintomas Relatados pelo Paciente: ");
+					int add = 2;
+					System.out.println("<1> Adicionar Sintomas ");
+					System.out.println("<0> sair ");
+					sc.nextLine();
+					do {
+						
+						sintomas = sc.nextLine();
+						paciente.Sintomas(sintomas);
+						add = sc.nextInt();
+						sc.nextLine();
+						
+					}while(add != 0);
+					sintomas = sc.nextLine();
+					
+					
+						
 ;					
 					
 					System.out.println("Digite a Data de Hoje: ");
