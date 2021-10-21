@@ -14,6 +14,9 @@ public class MainHospital {
 		Recepcionista recepcao = new Recepcionista();
 		Triagem triagemPaciente = new Triagem();
 		Paciente paciente = new Paciente();
+		float temperatura, pressao, oxigenio;
+	    boolean paladar,oufato;
+		int nivelGravidade;
 		int opcao = 0;
 		Scanner sc = new Scanner(System.in);
 		do {
@@ -27,7 +30,7 @@ public class MainHospital {
 			
 			System.out.print("\n");
 			opcao = sc.nextInt();
-			String nome, email, data, CadUnico,sintomas;
+			String nome, email, data, CadUnico;
 			String cep, cpf, telefone;
 			nome = "Maria Rafaela";
 			recepcao.setNome(nome);
@@ -67,31 +70,40 @@ public class MainHospital {
 					System.out.println("Digite o Telefone: ");
 					telefone = sc.nextLine();
 					paciente.setTelefone(telefone);
-					System.out.println("Temperatura do Paciente: ");
-					paciente.temperatura = sc.nextFloat();
-					System.out.println("Pressão Arterial: ");
-					paciente.pressao = sc.nextFloat();
-					System.out.println("Saturação de Oxigenio: ");
-					paciente.saturacao = sc.nextFloat();
-					System.out.println("Sintomas Relatados pelo Paciente: ");
-					int add = 2;
-					System.out.println("<1> Adicionar Sintomas ");
-					System.out.println("<0> sair ");
 					sc.nextLine();
-					do {
-						
-						sintomas = sc.nextLine();
-						paciente.Sintomas(sintomas);
-						add = sc.nextInt();
-						sc.nextLine();
-						
-					}while(add != 0);
-					sintomas = sc.nextLine();
 					System.out.println("Digite a Data de Hoje: ");
 					data = sc.nextLine();
 					recepcao.setDataNacimento(data);
-				
 					recepcao.CadastroPaciente(paciente);
+					System.out.println("Cadastro feito com sucesso! ");
+					System.out.println("Triagem do Passiente");
+					System.out.println("Informe a Temperatura: ");
+					temperatura = sc.nextFloat();
+					paciente.triagem.setTemperatura(temperatura);
+					System.out.println("Informe a Pressão Arterial: ");
+					pressao = sc.nextFloat();
+					paciente.triagem.setPressao(pressao);
+					System.out.println("Informe O nivel de Oxigenio: ");
+					oxigenio = sc.nextFloat();
+					paciente.triagem.getOxigenio();
+					System.out.println("Perda de paladar: ");
+					System.out.println("<1> Sim: ");
+					System.out.println("<2> Não: ");
+					opcao = sc.nextInt();
+					if(opcao == 1) {
+						paciente.triagem.paladar = true;
+					}else {
+						paciente.triagem.paladar = false;
+					}
+					System.out.println("Perda de Oufato: ");
+					System.out.println("<1> Sim: ");
+					System.out.println("<2> Não: ");
+					opcao = sc.nextInt();
+					if(opcao == 1) {
+						paciente.triagem.oufato = true;
+					}else {
+						paciente.triagem.oufato = false;
+					}
 					break;
 					
 				case 2:

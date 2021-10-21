@@ -1,11 +1,11 @@
 package entities;
 
-import java.util.ArrayList;
+
 
 public class Triagem {
 	
 	private float temperatura, pressao, oxigenio;
-	ArrayList<String> listaSintomas = new ArrayList<String>();
+	public boolean paladar,oufato;
 	private int nivelGravidade;
 	
 	public float getTemperatura() {
@@ -32,16 +32,6 @@ public class Triagem {
 		this.nivelGravidade = nivelGravidade;
 	}
 
-	
-	
-	public void relatorioSaude() {
-		
-	}
-	
-	public void encaminharPaciente() {
-		
-	}
-
 	public float getPressao() {
 		return pressao;
 	}
@@ -49,5 +39,15 @@ public class Triagem {
 	public void setPressao(float pressao) {
 		this.pressao = pressao;
 	}
+	
+	public void relatorioSaude() {
+		
+	}
+	
+	public void statusAtual() {
+		
+	}
+
+	
 
 }

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Paciente extends Pessoa{
 	private String cadastroUnico;
-	public float temperatura, saturacao,pressao;
-	public int nivelGravidade;
-	ArrayList<String> listaSintomas = new ArrayList<String>();
+	ArrayList<Triagem> listaTriagem = new ArrayList<Triagem>();
+	public Triagem triagem = new Triagem();
+
 
 	public String getCadastroUnico() {
 		return cadastroUnico;
@@ -24,9 +24,7 @@ public class Paciente extends Pessoa{
 	public void setCadastroUnico(String cadastroUnico) {
 		this.cadastroUnico = cadastroUnico;
 	}
-	public void Sintomas(String sintomas) {
-		listaSintomas.add(sintomas);
-	}
+
 	@Override
 	public void HistoricoSistema() {
 		System.out.println("Ficha Paciente");
@@ -34,7 +32,7 @@ public class Paciente extends Pessoa{
 		System.out.printf("Data de Nascimento: %s\n", getDataNacimento());
 		System.out.printf("Cadastro Unico: %s\n", cadastroUnico);
 		System.out.println("Sintomas relatados");
-		System.out.println(listaSintomas);
+
 		
 	}
 
