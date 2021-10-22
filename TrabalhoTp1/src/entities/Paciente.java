@@ -1,10 +1,8 @@
 package entities;
 
-import java.util.ArrayList;
 
 public class Paciente extends Pessoa{
 	private String cadastroUnico;
-	ArrayList<Triagem> listaTriagem = new ArrayList<Triagem>();
 	public Triagem triagem = new Triagem();
 
 
@@ -31,7 +29,15 @@ public class Paciente extends Pessoa{
 		System.out.printf("Nome Paciente: %s\n", getNome());
 		System.out.printf("Data de Nascimento: %s\n", getDataNacimento());
 		System.out.printf("Cadastro Unico: %s\n", cadastroUnico);
-		System.out.println("Sintomas relatados");
+		if(triagem.getNivelGravidade() == 1) {
+			System.out.println("Orientação, Quarentena e Teste Covid");
+		}else if(triagem.getNivelGravidade() == 2) {
+			System.out.println("Orientação, Medicamento e Teste Covid");
+		}else if(triagem.getNivelGravidade() == 3) {
+			System.out.println("Orientação, Medico e Teste Covid");
+		}else if(triagem.getNivelGravidade() == 4) {
+			System.out.println("Internação, Medico e Teste Covid");
+		}
 
 		
 	}

@@ -40,13 +40,26 @@ public class Triagem {
 		this.pressao = pressao;
 	}
 	
-	public void relatorioSaude() {
-		
+	public void statusMedico() {
+		if(temperatura >= 37.1 && temperatura <= 37.8 && pressao >= 12.08 && pressao <= 13.08  && oxigenio>= 91 && oxigenio <= 99 && oufato == false && paladar == false) {
+			nivelGravidade = 1;
+			
+			
+		}else if(temperatura >= 38.1 && temperatura <= 38.8 || pressao >= 12.08 && pressao <= 13.08  && oxigenio>= 91 && oxigenio <= 99 && oufato == false && paladar == true) {
+			nivelGravidade = 2;
+			
+		}else if(temperatura >= 38.9 && temperatura <= 39.5 && pressao >= 12.08 && pressao <= 13.08  || oxigenio>= 91 && oxigenio <= 99 || oufato == true || paladar == true) {
+			nivelGravidade = 3;
+			
+		}
+		else if(temperatura >= 38.9 && temperatura <= 39.5 && pressao >= 12.08 && pressao <= 13.08  || oxigenio <= 90 && oufato == true && paladar == true) {
+			nivelGravidade = 4;
+			
+		}
 	}
 	
-	public void statusAtual() {
-		
-	}
+	
+	
 
 	
 
