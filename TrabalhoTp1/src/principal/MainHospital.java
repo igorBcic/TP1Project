@@ -97,7 +97,7 @@ public class MainHospital {
 					}
 					System.out.println("Perda de Oufato: ");
 					System.out.println("<1> Sim: ");
-					System.out.println("<2> Não: ");
+					System.out.println("<2> Não: "); 
 					opcao = sc.nextInt();
 					if(opcao == 1) {
 						paciente.triagem.oufato = true;
